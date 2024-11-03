@@ -1,0 +1,19 @@
+{
+  "name": "hi-nextjs",
+  "version": "1.0.0",
+  "description": "NextJS demos for practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keonoh00/hi-nextjs.git"
+  },
+  "author": "Keon Oh Kim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keonoh00/hi-nextjs/issues"
+  },
+  "homepage": "https://github.com/keonoh00/hi-nextjs#readme"
+}
