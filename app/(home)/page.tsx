@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Home",
 };
@@ -5,15 +7,23 @@ export const metadata = {
 const URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
 
 async function getMovies() {
-  return fetch(URL).then((response) => response.json());
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  const response = await fetch(URL);
+  const json = await response.json();
+  return json;
 }
 
 export default async function HomePage() {
   const movies = await getMovies();
   return (
     <div>
-      <h1>Hello NextJS</h1>
-      {JSON.stringify(movies)}
+      <ul>
+        {movies.map((movie) => (
+          <li key={movie.id}>
+            <Link href={`/movies/${movie.id}`}>{movie.id}</Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
